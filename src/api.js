@@ -8,7 +8,7 @@ const instance = axios.create({
 const queryYouTube = (topic) => {
   return instance
     .get(`?part=snippet&q=${topic}&key=${API_KEY}`)
-    .then(({ data }) => console.log(data));
+    .then(({ data: { items } }) => items);
 };
 
 export default queryYouTube;
